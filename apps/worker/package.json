@@ -1,0 +1,28 @@
+{
+  "name": "@code-exec/worker",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/worker.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/worker.ts",
+    "build": "tsc",
+    "start": "node dist/worker.js"
+  },
+  "dependencies": {
+    "@code-exec/shared": "*",
+    "@prisma/client": "^5.7.1",
+    "bullmq": "^5.1.1",
+    "ioredis": "^5.3.2",
+    "pino": "^8.17.2",
+    "pino-pretty": "^10.3.1",
+    "socket.io-client": "^4.6.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@types/uuid": "^9.0.7",
+    "prisma": "^5.7.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}
