@@ -12,6 +12,7 @@ const EnvSchema = z.object({
 
 function loadConfig() {
   const result = EnvSchema.safeParse(process.env);
+  console.log({result})
   if (!result.success) {
     console.error('❌ Invalid worker environment configuration:');
     console.error(result.error.format());

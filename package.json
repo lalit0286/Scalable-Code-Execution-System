@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run predev && concurrently \"npm run dev --workspace=apps/api\" \"npm run dev --workspace=apps/worker\" \"npm run dev --workspace=apps/web\"",
+    "dev": "concurrently --kill-others-on-fail --prefix-colors \"blue,green,magenta\" --names \"api,worker,web\" \"cd apps/api && npm run dev\" \"cd apps/worker && npm run dev\" \"cd apps/web && npm run dev\"",
     "predev": "npm run build --workspace=packages/shared",
     "postinstall": "npm run build --workspace=packages/shared",
     "lint": "npm run lint --workspaces",
